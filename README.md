@@ -12,15 +12,21 @@
 *NOTE:* Requires Coreform Cubit 2025.11 or greater for PySide6 support.
 
 ## Usage
-Once the toolbar is installed five new icons will be displayed in the Coreform Cubit toolbar.
-![DAGMC toolbar image](assets/dagmc_toolbar.png)
-  1. The first icon presents an about box.
-  2. The second icon renames groups to a consistent naming convention
-  3. The third icon create Cubit blocks and materials from the group names.
-  4. The fourth icon provides a deviation report of the faceted geometry vs the CAD geoemtry.
-  5. The fifth icon reads an HDF5 results file and provides a visualization of lost particles and directions.
+Once the toolbar is installed fourteen new icons will be displayed in the Coreform Cubit toolbar.
+![surface create](icons/surface_create.png) - Create surfaces given curves.
+![assign materials](icons/assign_materials.png) - Create blocks assign some default names.
+![blunt tangency](icons/blunttangent.png) - Modify the geometry to remove sharp tangencies.
+![cut lines](icons/cutlines.png) - Opens the Geometry/Surface/Split Surface command panel. The most commonly used option is "Close To Vertex". This option allows the user to specify multiple surfaces, a curve on one side of the split, and a curve on the opposite side. The split will occur along the closest point on the curve to the selected point.
+![curve merge](icons/curvemerge.png) - Invokes the Cubit imprint and merge operations to ensure a conformal mesh.
+![mesh](icons/mesh_1.png) - Creates a quad dominant mesh on all surfaces.
+![assign bcs](icons/assign_bcs.png) - Assigns element groups based on the "tip" of the tire near the bead.
+![reflect](icons/reflect.png) - Reflects a part created in the XY plane.
+![add rebar](icons/rebar.png) - Defines rebar on 2xN mapped surfaces with a predefined block names, for example, any mapped block continaining the string "Belt."
+![move node](icons/move_node.png) - Opens the Mesh/Node/Move Node command panel.
+![undo to cut lines](icons/undo.png) - Does an undo back to cut lines. Note that manually defined composite curves may be lost.
+![rebar sense](icons/edgesense.png) - Draw the sense of the rebar elements.
+![collapse edge](icons/collapse.png) - Collapse an edge and remove bad triangles.
 
-Once the model is defined you can export to DAGMC by either selecting the File/Export DAGMC option or typing at the command line "export dagmc 'filename.h5m'." Note that the quotation marks around the filename are required Cubit syntax.
 ## Creating an updated tarball
   1. Ensure that all changes to toolbar scripts are functioning in Cubit.
   2. Go to Tools/Custom Toolbar Editor.
