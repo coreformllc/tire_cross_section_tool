@@ -1,14 +1,17 @@
 ### Coreform Cubit toolbar for meshing 2D tire cross-sections. 
 
 ## Toolbar Installation:
-  1. Download the tarball.
-  2. Open Coreform Cubit. 
-  3. Go to Tools/Custom Toolbar Editor.
-  4. Right click in the upper left frame labeled Toolbars.
-  5. Select Import.
-  6. Using the Package option, select the downloaded tarball and a destination directory.
-  7. Click on the Import push button.
-  8. Click on the Finish push button.
+  1. Clone the repository: git clone https://github.com/coreformllc/tire_cross_section_tool.git
+  2. Run the packaging script.
+      1. On Windows open a cmd prompt and run package.bat
+      2. On Linux run ./package.sh
+  3. Open Coreform Cubit
+  4. Go to Tools/Custom Toolbar Editor.
+  5. Right click in the upper left frame labeled Toolbars.
+  6. Select Import.
+  7. Using the Package option, select the downloaded tarball and a destination directory.
+  8. Click on the Import push button.
+  9. Click on the Finish push button.
 *NOTE:* Requires Coreform Cubit 2025.11 or greater for PySide6 support.
 
 ## Usage
