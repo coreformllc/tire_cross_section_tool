@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowToolbar version="1.0" name="Tire Cross-section Workflow" visible="true">
+  <description>Tools for creating a mesh on a 2D tire cross section. The minimal start requires a wireframe model of a cross-section. </description>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_geometry.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Create Surfaces">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/surface_create.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_materials.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Create Materials">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/assign_materials.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_blunt.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Blunt Tangency">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/blunttangent.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WCommandPanelAction>
+      <panelID>GeometrySurfaceModifySplit</panelID>
+      <WAction name="Cut Lines">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/cutlines.png</icon>
+        <description></description>
+      </WAction>
+    </WCommandPanelAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WJournalFileAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/merge.jou</filename>
+      <workingdir></workingdir>
+      <WAction name="Imprint and Merge">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/curvemerge.png</icon>
+        <description></description>
+      </WAction>
+    </WJournalFileAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/composite.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Composite">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/composite.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_mesh.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Mesh Cross Section">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/mesh_1.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_bc.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Apply Boundary Conditions">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/assign_bcs.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_reflect.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Reflect">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/reflect.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/tire_rebar.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Create Rebar">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/rebar.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WCommandPanelAction>
+      <panelID>MeshNodeMoveXYZ</panelID>
+      <WAction name="Move Node">
+        <icon></icon>
+        <description></description>
+      </WAction>
+    </WCommandPanelAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WJournalFileAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/undo_for_cutlines.py</filename>
+      <workingdir></workingdir>
+      <WAction name="Undo for Cutlines">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/undo.png</icon>
+        <description></description>
+      </WAction>
+    </WJournalFileAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/edge_visualization.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Rebar Direction">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/edgesense.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+  <WTButton visible="true">
+    <WPythonScriptAction>
+      <filename>@TOOLBAR_INSTALL_DIR@/scripts/edge_collapse.py</filename>
+      <UIfilename></UIfilename>
+      <workingdir>@TOOLBAR_INSTALL_DIR@/scripts/</workingdir>
+      <WAction name="Collapse Edge">
+        <icon>@TOOLBAR_INSTALL_DIR@/icons/collapse.png</icon>
+        <description></description>
+      </WAction>
+    </WPythonScriptAction>
+  </WTButton>
+</WorkflowToolbar>

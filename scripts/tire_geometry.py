@@ -64,7 +64,6 @@ class TireGeometry(QDialog):
         if not self.all_curves:
             self.all_curves = cubit.get_entities("curve")
         if not self.all_curves:
-            # Assumes ErrorWindow is defined below
             cubit_utils.ErrorWindow("Curves must be read from file before creating the geometry")
             return ()
         lengths = [cubit.get_curve_length(c) for c in self.all_curves]
@@ -84,18 +83,11 @@ class TireGeometry(QDialog):
 
         cubit.cmd("undo group begin")
         cubit.cmd("graphics off")
-        # get the bounding box and define the width and height to be 10% larger
-        bbox = cubit.get_total_bounding_box("curve", self.all_curves)
-        width = bbox[2] * 1.1
-        height = bbox[5] * 1.1
-        xdisp = (bbox[0] + bbox[1])/2
-        ydisp = (bbox[3] + bbox[4])/2
     
-        # Create the bounding surface
+        # Create the bounding surface (since the z-depth is 0 this is a sheet body).
         # we know that at this point this is surface 1
-        cubit.cmd(f'create surface rectangle width {width} height {height}')
+        cubit.cmd(f'create brick bounding box Curve all extended percentage 10')
         last_vertex = cubit.get_last_id("vertex")
-        cubit.cmd(f'move surface 1 x {xdisp} y {ydisp}')
         
         if self.mergeTolerance.text():
             self.merge_tolerance = float(self.mergeTolerance.text())
@@ -138,10 +130,21 @@ def main():
     global claro
     dlg = TireGeometry(claro)
     min_data = dlg.FindSmallestCurve()
+
+    # as a check get the diagonal of the bounding box
+    curves = cubit.get_entities("curve")
+    bbox = cubit.get_total_bounding_box("curve", curves)
+    diagonal = bbox[9]
+
     if min_data:
         dlg.smallestCurveIDData.setText(str(min_data[0]))
         dlg.smallestCurveLengthData.setText("%.4f" % min_data[1])
         suggested_tolerance = math.floor(min_data[1]*50)/100 # ((length/2)*100)/100
+        # this is just a guess and may need to be tweeked. If the
+        # ratio of the bounding box diagonal to the suggested toleranc
+        # is > 20 make the suggested tolerance smaller by a factor of 10.
+        if diagonal/suggested_tolerance < 20:
+            suggested_tolerance *= 0.1
         dlg.mergeTolerance.setText(str(suggested_tolerance))
         dlg.show()
 
